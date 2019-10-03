@@ -1,0 +1,12 @@
+on: pull_request
+name: Go
+jobs:
+  gofmt:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: gofmt
+      uses: sjkaliski/go-github-actions/fmt@v0.4.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
